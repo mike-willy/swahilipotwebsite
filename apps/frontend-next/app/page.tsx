@@ -1,100 +1,108 @@
-import Image from "next/image";
+import Image from 'next/image';
+import Link from 'next/link';
 
-export default function Home() {
+const partners = [
+  { name: 'ABSA', logo: '/Images/absa-logo-red.webp', url: 'https://www.absa.africa' },
+  { name: 'Cisco', logo: '/Images/cisco.webp', url: 'https://www.cisco.com' },
+  { name: 'Hilton', logo: '/Images/conradhiltonfoundation.webp', url: 'https://www.hiltonfoundation.org' },
+  { name: 'County', logo: '/Images/county.webp', url: '#' },
+  { name: 'Datacamp', logo: '/Images/datacamp.png', url: 'https://www.datacamp.com' },
+  { name: 'GDI', logo: '/Images/GDI.webp', url: 'https://globaldevincubator.org' },
+  { name: 'Huawei', logo: '/Images/huawei.webp', url: 'https://www.huawei.com' },
+  { name: 'ICT', logo: '/Images/ict.webp', url: '#' },
+  { name: 'KNCCI', logo: '/Images/KNCCI.webp', url: 'https://www.kncci.or.ke' },
+  { name: 'Konza', logo: '/Images/Konza.webp', url: 'https://www.konzacity.go.ke' },
+  { name: 'Liquid', logo: '/Images/liquid.webp', url: 'https://liquid.tech' },
+  { name: 'Mastercard', logo: '/Images/mastercard-foundation.webp', url: 'https://www.mastercardfoundation.org' },
+  { name: 'NGO Source', logo: '/Images/ngosource.webp', url: 'https://www.ngosource.org' },
+  { name: 'NMK', logo: '/Images/nmk.webp', url: '#' },
+  { name: 'Seacom', logo: '/Images/seacom.webp', url: 'https://seacom.com' },
+];
+
+export default function Spfm() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    <div className="bg-white min-h-screen text-gray-900">
+      {/* Header */}
+      <header className="bg-blue-900 text-white py-6">
+        <div className="container mx-auto flex justify-between px-6">
+          <nav className="flex space-x-6">
+            <Link href="#">Home</Link>
+            <Link href="#">About</Link>
+            <Link href="#">Programs</Link>
+            <Link href="#">Contact</Link>
+          </nav>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
+      </header>
+
+      {/* Listen Section */}
+      <div className="text-center py-12">
+        <Image src="/Images/Swahilipotfm.webp" alt="Swahilipot FM Logo" width={150} height={100} className="mx-auto" />
+        <h2 className="text-3xl font-bold mt-4">Swahilipot FM Live Streaming</h2>
+        <h2 className="text-3xl font-bold mt-4">Listen to Swahilipot FM</h2>
+        <p className="text-lg mt-2">Enjoy live streaming and stay connected</p>
+        <Link href="https://streaming-link.com">
+          <button className="mt-4 px-6 py-2 bg-red-600 hover:bg-red-700 transition text-white rounded-md">
+            Listen Live
+          </button>
+        </Link>
+      </div>
+
+      {/* Streaming Section */}
+      <div className="container mx-auto py-12 text-center">
+        <h2 className="text-3xl font-bold">Watch Swahilipot FM Live</h2>
+        <div className="mt-6 w-full max-w-3xl mx-auto bg-black text-white p-6 rounded-md shadow-lg">
+          <p className="text-xl">OFFLINE</p>
+        </div>
+      </div>
+
+      {/* Partners Section */}
+      <div className="bg-gray-100 py-12">
+        <h2 className="text-3xl font-bold text-center">Our Partners</h2>
+        <div className="flex flex-wrap justify-center items-center gap-6 mt-8">
+          {partners.map((partner, index) => (
+            <Link key={index} href={partner.url} target="_blank" rel="noopener noreferrer">
+              <Image
+                src={partner.logo}
+                alt={`${partner.name} Logo`}
+                width={120}
+                height={60}
+                className="cursor-pointer hover:opacity-80 transition"
+              />
+            </Link>
+          ))}
+        </div>
+      </div>
+
+      {/* Footer */}
+      <footer className="bg-blue-900 text-white py-6 mt-12">
+        <div className="container mx-auto flex flex-wrap justify-between px-6">
+          <div className="w-full md:w-1/3">
+            <h3 className="text-lg font-bold">ABOUT SWAHILIPOT</h3>
+            <ul className="text-sm">
+              <li>Contact us</li>
+              <li>About us</li>
+              <li>Our Origin Story</li>
+            </ul>
+          </div>
+          <div className="w-full md:w-1/3">
+            <h3 className="text-lg font-bold">DEPARTMENTS</h3>
+            <ul className="text-sm">
+              <li>Communication</li>
+              <li>Creatives</li>
+              <li>Community Experience</li>
+              <li>Engineering Team</li>
+            </ul>
+          </div>
+          <div className="w-full md:w-1/3">
+            <h3 className="text-lg font-bold">Location</h3>
+            <iframe
+              src="https://maps.google.com/maps?q=Swahilipot%20Hub&t=&z=13&ie=UTF8&iwloc=&output=embed"
+              width="300"
+              height="200"
+              className="rounded-md"
+            ></iframe>
+          </div>
+        </div>
       </footer>
     </div>
   );
